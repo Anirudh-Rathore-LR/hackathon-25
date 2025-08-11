@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { User, AccessToken } from '../types/auth';
 import { AVAILABLE_FEATURES } from '../types/auth';
+import { enabledFeatures } from '../config';
 
 interface AuthContextType {
   user: User | null;
@@ -59,7 +60,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   const hasFeature = (feature: string): boolean => {
-    return user?.features?.includes(feature) || false;
+    return enabledFeatures.includes(feature);
   };
 
   useEffect(() => {

@@ -1,7 +1,22 @@
 import React from 'react';
 import { BarChart3, TrendingUp, TrendingDown, DollarSign, Users, Mail, Activity } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
+import { AVAILABLE_FEATURES } from '../types/auth';
 
 const Analytics: React.FC = () => {
+  const { hasFeature } = useAuth();
+
+  if (!hasFeature(AVAILABLE_FEATURES.ANALYTICS_DASHBOARD)) {
+    return (
+      <div className="flex items-center justify-center h-full min-h-[300px]">
+        <div className="bg-white p-8 rounded shadow text-center">
+          <h2 className="text-xl font-semibold mb-2">Feature Not Enabled</h2>
+          <p className="text-gray-600">The Analytics Dashboard feature is not enabled on your account.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       {/* Header */}

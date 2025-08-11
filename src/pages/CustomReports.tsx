@@ -1,8 +1,23 @@
+
 import React, { useState } from 'react';
 import { FileText, Plus, Download, Filter, Calendar, BarChart3 } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
+import { AVAILABLE_FEATURES } from '../types/auth';
 
 const CustomReports: React.FC = () => {
+  const { hasFeature } = useAuth();
   const [selectedReportType, setSelectedReportType] = useState('');
+
+  if (!hasFeature(AVAILABLE_FEATURES.CUSTOM_REPORTS)) {
+    return (
+      <div className="flex items-center justify-center h-full min-h-[300px]">
+        <div className="bg-white p-8 rounded shadow text-center">
+          <h2 className="text-xl font-semibold mb-2">Feature Not Enabled</h2>
+          <p className="text-gray-600">The Custom Reports feature is not enabled on your account.</p>
+        </div>
+      </div>
+    );
+  }
 
   const savedReports = [
     {

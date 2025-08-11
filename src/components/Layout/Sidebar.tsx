@@ -49,16 +49,16 @@ const Sidebar: React.FC = () => {
     }
   ];
 
-  const filteredItems = menuItems.filter(item => 
-    !item.feature || hasFeature(item.feature)
-  );
+  // const filteredItems = menuItems.filter(item => 
+  //   !item.feature || hasFeature(item.feature)
+  // );
 
   return (
     <div className="hidden md:flex md:w-64 md:flex-col">
       <div className="flex flex-col flex-grow pt-5 bg-white border-r border-gray-200">
         <div className="flex flex-col flex-grow overflow-y-auto">
           <nav className="flex-1 px-2 space-y-1">
-            {filteredItems.map((item) => {
+            {menuItems.map((item) => {
               const isActive = location.pathname === item.path;
               const Icon = item.icon;
               
