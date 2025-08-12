@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { User, AccessToken, FeatureFlag } from '../types/auth';
+import type { User, AccessToken, FeatureFlag } from '../types/auth';
 import { AVAILABLE_FEATURES } from '../types/auth';
 import axios from "axios";
 import.meta.env.VITE_DOMAIN

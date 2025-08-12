@@ -19,6 +19,16 @@ import {
   Settings,
   Sparkles,
   Star
+  Activity,
+  Share2,
+  Zap,
+  Headphones,
+  Package,
+  FolderOpen,
+  Users2,
+  Settings,
+  Sparkles,
+  Star
 } from 'lucide-react';
 import { AVAILABLE_FEATURES } from '../types/auth';
 
@@ -161,6 +171,7 @@ const Dashboard: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-600">Total Contacts</p>
+              <p className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">1,248</p>
               <p className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">1,248</p>
             </div>
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-3 rounded-2xl shadow-lg">
