@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { User, AccessToken, FeatureFlag } from '../types/auth';
-import type { User, AccessToken, FeatureFlag } from '../types/auth';
 import { AVAILABLE_FEATURES } from '../types/auth';
 import axios from "axios";
 import.meta.env.VITE_DOMAIN
@@ -126,6 +125,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const fetchFeatureFlags = async (): Promise<string[]> => {
     try {
       setIsLoading(true);
+      const orgID = "org_aJruOx9pnKJN3uE3"
       // TODO: Replace with actual API call
       // const response = await fetch('/api/feature-flags', {
       //   headers: {

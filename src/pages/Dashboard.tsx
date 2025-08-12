@@ -19,16 +19,6 @@ import {
   Settings,
   Sparkles,
   Star
-  Activity,
-  Share2,
-  Zap,
-  Headphones,
-  Package,
-  FolderOpen,
-  Users2,
-  Settings,
-  Sparkles,
-  Star
 } from 'lucide-react';
 import { AVAILABLE_FEATURES } from '../types/auth';
 

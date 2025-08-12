@@ -1,7 +1,6 @@
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { Building2, LogOut, User, Sparkles } from 'lucide-react';
-import { Building2, LogOut, User, Sparkles } from 'lucide-react';
 
 const Header: React.FC = () => {
   const { user, logout } = useAuth();
