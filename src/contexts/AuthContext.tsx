@@ -133,6 +133,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       setIsLoading(true);
       const orgID = "org_aJruOx9pnKJN3uE3"
+      // const response : any = await axios.get('http://localhost:8080/org/feature', {
+      //   params: {
+      //     orgId: orgID,
+      //     access_token: localStorage.getItem('accessToken')
+      //   }
+      // });
       // TODO: Replace with actual API call
       // const response = await fetch('/api/feature-flags', {
       //   headers: {
@@ -142,12 +148,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // const featureFlags: FeatureFlag[] = await response.json();
       
       // Using mock data for now
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
+     // await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
       const featureFlags = mockFeatureFlags;
-      
+      //const featureFlags = response.Data
       const enabled = featureFlags
-        .filter(flag => flag.State === true)
-        .map(flag => flag.FeatureFlagId);
+        .filter((flag : any)=> flag.State === true)
+        .map((flag:any) => flag.FeatureFlagId);
       
       return enabled;
     } catch (error) {
