@@ -44,7 +44,7 @@ const mockFeatureFlags: FeatureFlag[] = [
     Id: '2',
     OrgId: 'org-123',
     FeatureFlagId: 'lead_management',
-    State: true,
+    State: false,
     CreatedDate: '2024-01-01T00:00:00Z',
     ModifiedDate: '2024-01-15T00:00:00Z'
   },
@@ -52,7 +52,7 @@ const mockFeatureFlags: FeatureFlag[] = [
     Id: '3',
     OrgId: 'org-123',
     FeatureFlagId: 'analytics_dashboard',
-    State: true,
+    State: false,
     CreatedDate: '2024-01-01T00:00:00Z',
     ModifiedDate: '2024-01-15T00:00:00Z'
   },

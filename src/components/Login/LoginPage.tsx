@@ -52,6 +52,7 @@ const Login: React.FC<LoginProps> = () => {
               isForgotpassword: false,
               onSuccess: function (response : any) {
                 //redirect to dashboard
+                localStorage.setItem('accessToken', response.access_token);
                   navigate('/dashboard', { replace: true });
               },
             });
