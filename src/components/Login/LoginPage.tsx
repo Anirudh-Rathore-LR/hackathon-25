@@ -53,7 +53,20 @@ const Login: React.FC<LoginProps> = () => {
               onSuccess: function (response : any) {
                 //redirect to dashboard
                 localStorage.setItem('accessToken', response.access_token);
-                  navigate('/dashboard', { replace: true });
+                axios.post('http://localhost:8080/login', null, {
+                  params: {
+                    access_token: response.access_token,
+                    uid: response.Profile.Uid
+                  }
+                })
+                  .then((res:any) => {
+                    localStorage.setItem('loginResponse',res.Data)
+
+                   
+                  })
+                  .catch((error) => {
+                    console.error("Error during login:", error);
+                  });
               },
             });
           }

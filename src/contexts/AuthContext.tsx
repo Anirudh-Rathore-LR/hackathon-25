@@ -115,12 +115,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       // Simple JWT decode (for demo purposes - in production use proper JWT library)
       const payload = {
-          sub: "sub",
-  email: "email",
-  name: "name",
+        sub: "sub",
+        email: "email",
+        name: "name",
  features: Object.values(AVAILABLE_FEATURES),
-      exp: Math.floor(Date.now() / 1000) + 3600, // 1 hour
-      iat: Math.floor(Date.now() / 1000)
+        exp: Math.floor(Date.now() / 1000) + 3600, // 1 hour
+        iat: Math.floor(Date.now() / 1000)
       }
       return payload as AccessToken;
     } catch (error) {
