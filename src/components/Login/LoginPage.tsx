@@ -39,7 +39,8 @@ const Login: React.FC<LoginProps> = () => {
       .then((res) => {
         if (res.data && res.data.token) {
           //redirect to dashboard
-              navigate('/dashboard', { replace: true });
+          localStorage.setItem('accessToken', res.data.token);
+          navigate('/dashboard', { replace: true });
         } else {
           if (window.LoginRadiusSDK) {
             const commonOptions = {
