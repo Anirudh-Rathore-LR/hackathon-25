@@ -8,6 +8,10 @@ import EmailCampaigns from './pages/EmailCampaigns';
 import LeadManagement from './pages/LeadManagement';
 import Analytics from './pages/Analytics';
 import CustomReports from './pages/CustomReports';
+import SocialMediaManagement from './pages/SocialMediaManagement';
+import TaskAutomation from './pages/TaskAutomation';
+import CustomerSupport from './pages/CustomerSupport';
+import SalesForecasting from './pages/SalesForecasting';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated } = useAuth();
@@ -31,6 +35,10 @@ function App() {
             <Route path="lead-management" element={<LeadManagement />} />
             <Route path="analytics" element={<Analytics />} />
             <Route path="reports" element={<CustomReports />} />
+            <Route path="social-media" element={<SocialMediaManagement />} />
+            <Route path="automation" element={<TaskAutomation />} />
+            <Route path="support" element={<CustomerSupport />} />
+            <Route path="forecasting" element={<SalesForecasting />} />
           </Route>
         </Routes>
       </Router>
