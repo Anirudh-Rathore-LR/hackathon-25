@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Navigate } from "react-router-dom";
+
+
 import { useNavigate } from 'react-router-dom';
 // Extend the Window interface to include LoginRadiusSDK
 declare global {
@@ -33,7 +33,7 @@ const Login: React.FC<LoginProps> = () => {
 
     // Initialize LoginRadius SDK or any other necessary setup
     axios
-      .get(`https://dev-anirudh.devhub.lrinternal.com/ssologin/login`, {
+      .get(`https://${import.meta.env.VITE_DOMAIN}/ssologin/login`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -147,7 +147,7 @@ export default Login
 //               <div className="text-white">
 //                 <div className="flex items-center space-x-3 mb-8">
 //                   <Building2 className="h-12 w-12" />
-//                   <h1 className="text-4xl font-bold">CRM Pro</h1>
+//                   <h1 className="text-4xl font-bold">V2V CRM</h1>
 //                 </div>
 //                 <h2 className="text-2xl font-light mb-6">
 //                   Your Complete Customer Relationship Management Solution
